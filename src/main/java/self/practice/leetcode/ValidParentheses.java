@@ -7,6 +7,46 @@ import java.util.Stack;
 
 public class ValidParentheses {
 	
+	public boolean isValid5(String s) {
+		
+		int sLen, currPos;
+		sLen = s.length();
+		currPos = -1;
+		
+		char[] cArr = new char[sLen];
+		char currCha = '\u0000';
+		
+		for(int idx=0 ; idx<sLen ; idx++) {
+			
+			currCha = s.charAt(idx);
+			if(currCha=='(' || 
+				currCha=='[' || 
+				currCha=='{') {
+				cArr[++currPos] = currCha;
+			}else {
+				
+				if(currPos == -1) {
+					return false;
+				}
+				
+				if((currCha==')' && cArr[currPos--]!='(') || 
+					(currCha==']' && cArr[currPos--]!='[') || 
+					(currCha=='}' && cArr[currPos--]!='{')) {
+					return false;
+				}
+				
+			}
+			
+		}
+		
+		if(currPos == -1) {
+			return true;
+		}
+		
+		return false;
+		
+	}
+	
 	public boolean isValid4(String s) {
 		
 		int sLen, currPos;
@@ -14,8 +54,8 @@ public class ValidParentheses {
 		currPos = 0;
 		
 		Stack<Character> charStack = new Stack<Character>();
-		char currChar, tmpChar;
-		currChar = tmpChar = '\u0000';
+		char currChar;
+		currChar = '\u0000';
 		
 		while(currPos<sLen) {
 			
@@ -237,6 +277,12 @@ public class ValidParentheses {
 		System.out.println("3=" + vP.isValid4("(]"));
 		System.out.println("4=" + vP.isValid4("([])"));
 		System.out.println("5=" + vP.isValid4("([)]"));
+		
+		System.out.println("1=" + vP.isValid5("()"));
+		System.out.println("2=" + vP.isValid5("()[]{}"));
+		System.out.println("3=" + vP.isValid5("(]"));
+		System.out.println("4=" + vP.isValid5("([])"));
+		System.out.println("5=" + vP.isValid5("([)]"));
 		
 	}
 	
