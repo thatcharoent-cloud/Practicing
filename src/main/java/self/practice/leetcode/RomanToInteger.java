@@ -5,10 +5,56 @@ import java.util.Map;
 
 public class RomanToInteger {
 	
+	public int romanToInt3(String s) {
+		
+		Map<String, Integer> rTIMap = new HashMap<String, Integer>();
+		rTIMap.put("I", 1);rTIMap.put("IV", 4);rTIMap.put("IX", 9);
+		rTIMap.put("V", 5);
+		rTIMap.put("X", 10);rTIMap.put("XL", 40);rTIMap.put("XC", 90);
+		rTIMap.put("L", 50);
+		rTIMap.put("C", 100);rTIMap.put("CD", 400);rTIMap.put("CM", 900);
+		rTIMap.put("D", 500);
+		rTIMap.put("M", 1000);
+		
+		int sLength, uBound, result;
+		sLength = s.length();
+		result = 0;
+		
+		String procStr;
+		Integer currVal;
+		
+		for(int idx=0 ; idx<sLength ; idx++) {
+			
+			uBound = idx+2;
+			if(uBound<=sLength) {
+				
+				currVal = rTIMap.get(s.substring(idx, uBound));
+				if(currVal != null) {
+					
+					result += currVal;
+					idx++;
+					continue;
+					
+				}
+				
+			}
+			
+			procStr = s.substring(idx, idx+1);
+			currVal = rTIMap.get(procStr);
+			
+			result += currVal;
+			
+		}
+		
+		return result;
+		
+	}
+	
 	public int romanToInt2(String s) {
 		
-		int sLenght, result;
+		int sLenght, sBound, result;
 		sLenght = s.length();
+		sBound = sLenght-1;
 		result = 0;
 		
 		char currChar, nextChar;
@@ -16,7 +62,7 @@ public class RomanToInteger {
 		for(int i=0 ; i<sLenght ; i++) {
 			
 			currChar = s.charAt(i);
-			nextChar = i<sLenght-1?s.charAt(i+1):'\u0000';
+			nextChar = i<sBound?s.charAt(i+1):'\u0000';
 			
 			switch(currChar) {
 				case 'I' : 
@@ -122,10 +168,10 @@ public class RomanToInteger {
 		
 		RomanToInteger r = new RomanToInteger();
 		
-		System.out.println("1:" + r.romanToInt2("III"));
-		System.out.println("2:" + r.romanToInt2("LVIII"));
-		System.out.println("3:" + r.romanToInt2("MCMXCIV"));
-		System.out.println("4:" + r.romanToInt2("MMXXI"));
+		System.out.println("1:" + r.romanToInt3("III"));
+		System.out.println("2:" + r.romanToInt3("LVIII"));
+		System.out.println("3:" + r.romanToInt3("MCMXCIV"));
+		System.out.println("4:" + r.romanToInt3("MMXXI"));
 		
 	}
 	
