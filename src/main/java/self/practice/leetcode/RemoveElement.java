@@ -25,10 +25,10 @@ public class RemoveElement {
 	
 	public int removeElement(int[] nums, int val) {
 		
-		int numsLen;
-		numsLen = nums.length;
+		int numsLen = nums.length;
 		
 		List<Integer> tmpList = new ArrayList<Integer>(numsLen);
+		
 		for(int idx=0 ; idx<numsLen ; idx++) {
 			
 			if(nums[idx] != val) {
