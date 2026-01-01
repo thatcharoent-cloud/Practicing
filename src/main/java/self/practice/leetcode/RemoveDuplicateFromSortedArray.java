@@ -19,9 +19,10 @@ public class RemoveDuplicateFromSortedArray {
 			if(nums[resultIdx] != nums[numsIdx]) {
 				nums[++resultIdx] = nums[numsIdx];
 				
-//				if(maxNum == nums[resultIdx]) {
-//					return resultIdx+1;
-//				}
+				// comment this condition will improve performance???
+				if(maxNum == nums[resultIdx]) {
+					return resultIdx+1;
+				}
 				
 			}
 			
