@@ -1,4 +1,4 @@
-package self.practice.leetcode;
+package self.practice.leetcode.easy;
 
 public class LengthLastWord {
 	
