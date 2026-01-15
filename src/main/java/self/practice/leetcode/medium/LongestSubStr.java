@@ -1,4 +1,4 @@
-package self.practice.leetcode.easy;
+package self.practice.leetcode.medium;
 
 import java.util.HashMap;
 import java.util.HashSet;
