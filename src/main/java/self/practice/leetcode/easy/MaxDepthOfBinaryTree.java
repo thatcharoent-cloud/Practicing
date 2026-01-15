@@ -1,5 +1,7 @@
 package self.practice.leetcode.easy;
 
+import self.practice.leetcode.utils.TreeNode;
+
 public class MaxDepthOfBinaryTree {
 	
 	public int maxDepth(TreeNode root) {
@@ -35,24 +37,6 @@ public class MaxDepthOfBinaryTree {
 		
 		System.out.println(m.maxDepth(t));
 		
-	}
-	
-	public static class TreeNode{
-	
-		int val;
-		
-		TreeNode left;
-		TreeNode right;
-		
-		TreeNode(){}
-		TreeNode(int val) { this.val = val; }
-		
-		TreeNode(int val, TreeNode left, TreeNode right) {
-			this.val = val;
-			this.left = left;
-			this.right = right;
-		}
-	
 	}
 	
 }

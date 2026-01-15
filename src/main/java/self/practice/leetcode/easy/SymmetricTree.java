@@ -1,5 +1,7 @@
 package self.practice.leetcode.easy;
 
+import self.practice.leetcode.utils.TreeNode;
+
 public class SymmetricTree {
 	
 	public boolean isSymmetric(TreeNode root) {
@@ -64,24 +66,7 @@ public class SymmetricTree {
 		root.left = new TreeNode(2);
 		root.right = new TreeNode(3);
 		System.out.println(b.isSymmetric(root));
-	}
-	
-	public static class TreeNode{
-	
-		int val;
 		
-		TreeNode left;
-		TreeNode right;
-		
-		TreeNode(){}
-		TreeNode(int val) { this.val = val; }
-		
-		TreeNode(int val, TreeNode left, TreeNode right) {
-			this.val = val;
-			this.left = left;
-			this.right = right;
-		}
-	
 	}
 	
 }

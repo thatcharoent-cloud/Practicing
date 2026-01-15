@@ -1,5 +1,7 @@
 package self.practice.leetcode.easy;
 
+import self.practice.leetcode.utils.TreeNode;
+
 public class SameTree {
 	
 	public boolean isSameTree(TreeNode p, TreeNode q) {
@@ -58,24 +60,7 @@ public class SameTree {
 		q.right = new TreeNode(2);
 		
 		System.out.println(b.isSameTree(p, q));
-	}
-	
-	public static class TreeNode{
-	
-		int val;
 		
-		TreeNode left;
-		TreeNode right;
-		
-		TreeNode(){}
-		TreeNode(int val) { this.val = val; }
-		
-		TreeNode(int val, TreeNode left, TreeNode right) {
-			this.val = val;
-			this.left = left;
-			this.right = right;
-		}
-	
 	}
 	
 }

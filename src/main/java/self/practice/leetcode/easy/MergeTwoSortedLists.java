@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import self.practice.leetcode.utils.ListNode;
+
 public class MergeTwoSortedLists {
 	
 	public ListNode mergeTwoLists2(ListNode list1, ListNode list2) {
@@ -116,19 +118,6 @@ public class MergeTwoSortedLists {
 			
 		}
 		
-	}
-	
-}
-
-class ListNode{
-	
-	int val;
-	ListNode next;
-	ListNode(){}
-	ListNode(int val) {this.val = val;}
-	ListNode(int val, ListNode next){
-		this.val = val;
-		this.next = next;
 	}
 	
 }

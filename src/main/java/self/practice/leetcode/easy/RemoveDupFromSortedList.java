@@ -1,5 +1,7 @@
 package self.practice.leetcode.easy;
 
+import self.practice.leetcode.utils.ListNode;
+
 public class RemoveDupFromSortedList {
 	
 	public ListNode deleteDuplicates(ListNode head) {
@@ -50,15 +52,5 @@ public class RemoveDupFromSortedList {
 		r.deleteDuplicates(n);
 		
 	}
-	
-	public static class ListNode{
-	
-	int val;
-	ListNode next;
-	ListNode(){}
-	ListNode(int val) { this.val = val; }
-	ListNode(int val, ListNode next) { this.val = val; this.next = next; }
-	
-}
 	
 }
