@@ -1,4 +1,4 @@
-package self.practice.leetcode.medium;
+package self.practice.leetcode.hard;
 
 import java.util.ArrayList;
 import java.util.Collections;
